@@ -1,0 +1,25 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Podcast metadata output",
+    "description": "Dataset rows for shows and optional episodes (metadata only — No transcription). SUMMARY/OUTPUT JSON in KV.",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Shows & episodes",
+            "description": "Default dataset: kind=show|episode rows with title, artist, feedUrl, genres, enclosureUrl, duration, showNotesHash. No email/contacts. Views: overview.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "summary": {
+            "type": "string",
+            "title": "SUMMARY report",
+            "description": "Key-value store record SUMMARY (JSON): show/episode counts, charged events, peakMemoryMb, noTranscription flags.",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+        },
+        "output": {
+            "type": "string",
+            "title": "Run summary (OUTPUT)",
+            "description": "Key-value store record OUTPUT (JSON): same run summary as SUMMARY.",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+        }
+    }
+}

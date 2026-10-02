@@ -1,0 +1,50 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Shows & episodes",
+            "transformation": {
+                "fields": [
+                    "kind",
+                    "status",
+                    "title",
+                    "artist",
+                    "collectionId",
+                    "feedUrl",
+                    "genres",
+                    "trackCount",
+                    "published",
+                    "duration",
+                    "durationSecs",
+                    "enclosureUrl",
+                    "showNotesHash",
+                    "country",
+                    "source",
+                    "errors"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "kind": { "label": "Kind", "format": "text" },
+                    "status": { "label": "Status", "format": "text" },
+                    "title": { "label": "Title", "format": "text" },
+                    "artist": { "label": "Artist", "format": "text" },
+                    "collectionId": { "label": "Apple ID", "format": "text" },
+                    "feedUrl": { "label": "Feed URL", "format": "text" },
+                    "genres": { "label": "Genres", "format": "text" },
+                    "trackCount": { "label": "Tracks", "format": "number" },
+                    "published": { "label": "Published", "format": "date" },
+                    "duration": { "label": "Duration", "format": "text" },
+                    "durationSecs": { "label": "Secs", "format": "number" },
+                    "enclosureUrl": { "label": "Enclosure", "format": "text" },
+                    "showNotesHash": { "label": "Notes hash", "format": "text" },
+                    "country": { "label": "Country", "format": "text" },
+                    "source": { "label": "Source", "format": "text" },
+                    "errors": { "label": "Errors", "format": "text" }
+                }
+            }
+        }
+    }
+}

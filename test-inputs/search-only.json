@@ -1,0 +1,7 @@
+{
+  "searchKeywords": ["this american life"],
+  "includeEpisodes": false,
+  "maxShows": 5,
+  "searchLimitPerKeyword": 5,
+  "country": "us"
+}

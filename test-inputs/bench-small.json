@@ -1,0 +1,13 @@
+{
+  "searchKeywords": ["technology podcast"],
+  "podcastIds": ["1222114325", "1200361736"],
+  "country": "us",
+  "includeEpisodes": true,
+  "maxShows": 5,
+  "maxEpisodesPerShow": 5,
+  "searchLimitPerKeyword": 3,
+  "maxConcurrency": 3,
+  "maxFeedBytes": 5000000,
+  "requestTimeoutSecs": 30,
+  "maxRetries": 1
+}

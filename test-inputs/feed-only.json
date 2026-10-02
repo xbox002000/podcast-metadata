@@ -1,0 +1,9 @@
+{
+  "feedUrls": [
+    { "url": "https://feeds.simplecast.com/54nAGcIl" },
+    { "url": "https://rss.art19.com/tim-ferriss-show" }
+  ],
+  "includeEpisodes": true,
+  "maxEpisodesPerShow": 5,
+  "maxShows": 2
+}

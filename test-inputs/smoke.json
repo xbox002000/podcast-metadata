@@ -1,0 +1,13 @@
+{
+  "searchKeywords": ["science friday"],
+  "podcastIds": ["1222114325"],
+  "country": "us",
+  "includeEpisodes": true,
+  "maxShows": 4,
+  "maxEpisodesPerShow": 3,
+  "searchLimitPerKeyword": 3,
+  "maxConcurrency": 2,
+  "maxFeedBytes": 5000000,
+  "requestTimeoutSecs": 30,
+  "maxRetries": 1
+}

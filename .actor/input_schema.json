@@ -1,0 +1,151 @@
+{
+  "title": "Podcast metadata input",
+  "description": "Search Apple Podcasts, look up by collection ID, and/or parse RSS feed URLs. Returns show + optional episode metadata only \u2014 No transcription, no audio download, no email/contacts. Failed/empty feeds are free.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchKeywords": {
+      "title": "Search keywords",
+      "type": "array",
+      "description": "Terms to search on the public iTunes Search API (media=podcast). Each keyword returns up to searchLimitPerKeyword shows.",
+      "editor": "stringList",
+      "prefill": [
+        "rachel maddow",
+        "this american life"
+      ],
+      "sectionCaption": "Input"
+    },
+    "podcastIds": {
+      "title": "Apple podcast / collection IDs",
+      "type": "array",
+      "description": "Apple Podcasts collection IDs (numeric) or full podcasts.apple.com URLs containing /idNNNN. Looked up via iTunes Lookup API.",
+      "editor": "stringList",
+      "prefill": [
+        "1222114325"
+      ],
+      "sectionCaption": "Input"
+    },
+    "feedUrls": {
+      "title": "Feed URLs",
+      "type": "array",
+      "description": "Direct podcast RSS/Atom feed URLs. Parsed with feedparser for show + episode metadata. Audio enclosures are listed as enclosureUrl only \u2014 never downloaded.",
+      "editor": "requestListSources",
+      "prefill": [
+        {
+          "url": "https://feeds.npr.org/510318/podcast.xml"
+        }
+      ],
+      "sectionCaption": "Input"
+    },
+    "country": {
+      "title": "iTunes store country",
+      "type": "string",
+      "description": "ISO 2-letter country code for iTunes Search/Lookup (e.g. us, gb, tw, jp).",
+      "default": "us",
+      "prefill": "us",
+      "editor": "textfield",
+      "sectionCaption": "Scope"
+    },
+    "includeEpisodes": {
+      "title": "Include episode list",
+      "type": "boolean",
+      "description": "When true, fetch each show's feedUrl and emit episode metadata rows (title, published, duration, enclosureUrl, showNotesHash). No audio download / No transcription.",
+      "default": true,
+      "prefill": true,
+      "editor": "checkbox",
+      "sectionCaption": "Scope"
+    },
+    "maxShows": {
+      "title": "Max shows",
+      "type": "integer",
+      "description": "Cap on podcast shows processed (search + lookup + feed URLs combined). 0 = unlimited (subject to spending limit).",
+      "default": 50,
+      "prefill": 50,
+      "minimum": 0,
+      "editor": "number",
+      "sectionCaption": "Scope"
+    },
+    "maxEpisodesPerShow": {
+      "title": "Max episodes per show",
+      "type": "integer",
+      "description": "Cap episodes read from each RSS feed (feed order, usually newest first). 0 = unlimited. Ignored when includeEpisodes is false.",
+      "default": 50,
+      "prefill": 20,
+      "minimum": 0,
+      "editor": "number"
+    },
+    "searchLimitPerKeyword": {
+      "title": "Search results per keyword",
+      "type": "integer",
+      "description": "iTunes Search API limit parameter (1\u2013200) per keyword.",
+      "default": 25,
+      "prefill": 10,
+      "minimum": 1,
+      "maximum": 200,
+      "editor": "number"
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel feed fetches (1\u201320). Keep modest on 256 MB.",
+      "default": 4,
+      "prefill": 4,
+      "minimum": 1,
+      "maximum": 20,
+      "editor": "number",
+      "sectionCaption": "HTTP"
+    },
+    "requestTimeoutSecs": {
+      "title": "Request timeout (seconds)",
+      "type": "integer",
+      "description": "HTTP timeout for iTunes and feed requests.",
+      "default": 30,
+      "prefill": 30,
+      "minimum": 5,
+      "maximum": 120,
+      "editor": "number"
+    },
+    "maxRetries": {
+      "title": "Max retries",
+      "type": "integer",
+      "description": "Extra attempts after the first failure when fetching a feed.",
+      "default": 2,
+      "prefill": 2,
+      "minimum": 0,
+      "maximum": 5,
+      "editor": "number"
+    },
+    "userAgent": {
+      "title": "User-Agent",
+      "type": "string",
+      "description": "Optional custom User-Agent for HTTP requests.",
+      "editor": "textfield"
+    },
+    "chargeFailedShows": {
+      "title": "Charge failed shows",
+      "type": "boolean",
+      "description": "Default false: failed lookups and empty/broken feeds are free. Enable only if you want error rows billed as podcast-show.",
+      "default": false,
+      "editor": "checkbox",
+      "sectionCaption": "Billing"
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Optional Apify Proxy. Usually unnecessary for iTunes + public feeds.",
+      "editor": "proxy",
+      "sectionCaption": "Proxy"
+    },
+    "maxFeedBytes": {
+      "title": "Max feed bytes",
+      "type": "integer",
+      "description": "Abort a single feed download if the body exceeds this many bytes (default 5_000_000). Prevents hang on huge feeds. Oversized/failed feeds are free.",
+      "default": 5000000,
+      "prefill": 5000000,
+      "minimum": 50000,
+      "maximum": 20000000,
+      "editor": "number",
+      "sectionCaption": "HTTP"
+    }
+  }
+}

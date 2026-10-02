@@ -1,0 +1,18 @@
+{
+    "apify-actor-start": {
+        "eventTitle": "Actor start",
+        "eventDescription": "Charged once per run (Apify synthetic start event; priced per GB of run memory, 1 GB minimum). Target ~$0.001 for a typical 256 MB–1 GB start.",
+        "eventPriceUsd": 0.001
+    },
+    "podcast-show": {
+        "eventTitle": "Podcast show",
+        "eventDescription": "Charged once per successfully resolved podcast show (iTunes and/or RSS metadata with title/feedUrl/collectionId). Failed lookups and empty/broken feeds are free unless chargeFailedShows is enabled. No transcription.",
+        "eventPriceUsd": 0.001,
+        "isPrimaryEvent": true
+    },
+    "podcast-episode": {
+        "eventTitle": "Podcast episode",
+        "eventDescription": "Charged once per episode metadata row parsed from the show RSS (guid/title/published/duration/enclosureUrl/showNotesHash). Audio is never downloaded. Empty feeds and failed episode parses are free.",
+        "eventPriceUsd": 0.0005
+    }
+}

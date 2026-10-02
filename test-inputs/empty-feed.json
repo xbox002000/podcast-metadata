@@ -1,0 +1,5 @@
+{
+  "feedUrls": [{ "url": "https://httpbin.org/status/404" }],
+  "includeEpisodes": true,
+  "maxShows": 1
+}
