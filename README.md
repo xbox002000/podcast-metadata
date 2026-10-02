@@ -118,6 +118,6 @@ Failed / empty feeds are free. See **Measured results** above.
 - **No email / contacts / guest-booking lead scrapes**
 - Not a replacement for full-text show-notes Markdown pipelines — use **rss-atom-to-markdown** for that
 
-## License
+## License & source code
 
-GNU Affero General Public License v3.0 (AGPL-3.0) — see `LICENSE`.
+This Actor is open source under the **GNU Affero General Public License v3.0 (AGPL-3.0)** — see `LICENSE`. Runtime stack: `httpx` (BSD-3-Clause), `feedparser` (BSD-2-Clause), Apify SDK. The full source code is public: https://github.com/xbox002000/podcast-metadata
